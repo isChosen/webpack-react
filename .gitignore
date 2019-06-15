@@ -45,7 +45,6 @@ debug.log
 
 # myseting
 /dist
-/dll
 .cache
 .analysis
 package-lock.json

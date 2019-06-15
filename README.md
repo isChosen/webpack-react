@@ -1,0 +1,12 @@
+* 命令解释
+  * <code>dll:dev</code> 把 react/react-router 编译成动态链接库文件，代码没压缩，用于开发调试时，提示/报错信息更友好
+  * <code>dll:pro</code> 把 react/react-router 编译成动态链接库文件，代码已压缩，用于提交打包发布
+  * <code>start</code> 启动 <code>webpack-dev-server</code> 【接口代理：测试环境】<span style="color: #d24949">复合命令</span>
+  * <code>start:dev</code> 启动 <code>webpack-dev-server</code> 【接口代理：测试环境】<span style="color: #d24949">单命令</span>
+  * <code>start:pre</code> 启动 <code>webpack-dev-server</code> 【接口代理：预发布环境】，<span style="color: #d24949">单命令</span>
+  * <code>start:pro</code> 启动 <code>webpack-dev-server</code> 【接口代理：正式环境】，<span style="color: #d24949">单命令</span>
+  * <code>build:self</code> 打包构建，代码已压缩，脚本文件名为 <code>[chunk-id]</code>，<span style="color: #d24949">单命令</span>
+  * <code>build</code> 打包构建，代码已压缩，脚本文件名为 <code>[chunk-id]</code>，<span style="color: #d24949">复合命令</span>
+  * <span style="color: #ce8512">* <span style="color: #d24949">单命令</span> 表示：该命令每次都不执行对应的 dll 命令，即使 dll 文件已存在</span>
+* 视频资源：[webpack-react](https://pan.baidu.com/s/1zKyz10c9-6UK9NDv2A8hfg) 提取码：45oc
+* <span style="color: #1b8ec4;">如果你觉得对你有用，从中收获了知识，不要忘记给我点赞，加星喔！</span>
