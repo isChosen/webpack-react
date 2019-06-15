@@ -8,5 +8,5 @@
   * <code>build:self</code> 打包构建，代码已压缩，脚本文件名为 <code>[chunk-id]</code>，<span style="color: #d24949">单命令</span>
   * <code>build</code> 打包构建，代码已压缩，脚本文件名为 <code>[chunk-id]</code>，<span style="color: #d24949">复合命令</span>
   * <span style="color: #ce8512">* <span style="color: #d24949">单命令</span> 表示：该命令每次都不执行对应的 dll 命令，即使 dll 文件已存在</span>
-* 视频资源：[webpack-react](https://pan.baidu.com/s/1zKyz10c9-6UK9NDv2A8hfg) 提取码：45oc
+* 百度网盘资源：[webpack-react](https://pan.baidu.com/s/1zKyz10c9-6UK9NDv2A8hfg) 提取码：45oc
 * <span style="color: #1b8ec4;">如果你觉得对你有用，从中收获了知识，不要忘记给我点赞，加星喔！</span>
