@@ -1,0 +1,23 @@
+{
+  "code": 0,
+  "data": [
+    {
+      "id": 1,
+      "grade": "senior",
+      "age": 16,
+      "name": "Aimee"
+    },
+    {
+      "id": 2,
+      "grade": "university",
+      "age": 19,
+      "name": "Merry"
+    },
+    {
+      "id": 3,
+      "grade": "society",
+      "age": 23,
+      "name": "Victoria"
+    }
+  ]
+}

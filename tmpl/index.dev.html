@@ -1,0 +1,49 @@
+<!--[if lt IE 10 ]>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html class="ieHack" xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn">
+<![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<!DOCTYPE html>
+<html lang="zh-cn">
+<!--<![endif]-->
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <link rel="stylesheet" href="./static/css/reset.css" />
+  </head>
+  <body>
+    <div id="root">
+      <h4 style="
+        text-align: center;
+        margin-top: 10px;
+        font-size: 14px;
+        font-weight: 500;
+        color: rgba(0, 0, 0, .65);"
+      >应用加载中，请稍候...</h4>
+    </div>
+
+    <!--[if lt IE 10]>
+      <script src="./static/lib/es5-shim.min.js"></script>
+      <script src="./static/lib/es5-sham.min.js"></script>
+    <![endif]-->
+    <script>
+      /**
+       * 检测浏览器环境是否需要 polyfill
+       * modern browser 不需要添加 polyfill.min.js 避免多余的代码
+       * 只能用 var, 因为 ie10- 不支持 const let
+       */
+      var modernBrowser = 'assign' in Object && 'Promise' in window;
+      if (!modernBrowser) {
+        var scriptEle = document.createElement('script');
+        scriptEle.async = false;
+        scriptEle.src = './static/lib/polyfill.min.js';
+        document.head.appendChild(scriptEle);
+      }
+    </script>
+    <script type="text/javascript" src="./dll/react.dll.js"></script>
+    <script type="text/javascript" src="./dll/react_router.dll.js"></script>
+  </body>
+</html>
