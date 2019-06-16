@@ -20,7 +20,7 @@ module.exports = {
       chunks: 'all',
       minSize: 20000, // 20k
       minChunks: 1,
-      maxAsyncRequests: 5,
+      maxAsyncRequests: 10,
       maxInitialRequests: 3,
       automaticNameDelimiter: '-',
       cacheGroups: {
@@ -52,6 +52,12 @@ module.exports = {
           name: 'vendor-axios',
           test: /[\\/]node_modules[\\/]axios[\\/]/,
           priority: 25,
+          chunks: 'async'
+        },
+        moment: {
+          name: 'vendor-moment',
+          test: /[\\/]node_modules[\\/]moment[\\/]/,
+          priority: 30,
           chunks: 'async'
         }
       }
@@ -142,8 +148,8 @@ module.exports = {
 
     // 分离样式
     new MiniCssExtractPlugin({
-      filename: "css/[name].[contenthash:6].css",
-      chunkFilename: "css/[name].[contenthash:6].css"
+      filename: "css/[id].[contenthash:6].css",
+      chunkFilename: "css/[id].[contenthash:6].css"
     }),
 
     new webpack.DllReferencePlugin({

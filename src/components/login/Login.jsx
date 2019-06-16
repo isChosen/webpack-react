@@ -2,7 +2,7 @@
  * @Author: Chosen
  * @Date: 2019-06-11 20:16:30
  * @Last Modified by: Chosen
- * @Last Modified time: 2019-06-15 17:54:51
+ * @Last Modified time: 2019-06-16 13:36:49
  * @Decription: Login Component
  */
 
@@ -10,7 +10,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { RESET_RELOGIN_FLAG2_FALSE } from '@store/actionTypes';
-import { submit } from '@util/request';
+import { fn1 } from './methods';
+// import { submit } from '@util/request';
 import less from './login.less';
 
 class Login extends Component {
@@ -28,6 +29,7 @@ class Login extends Component {
   }
 
   componentDidMount() {
+    fn1('测试 fn');
     const { resetReLoginFlag } = this.props;
     resetReLoginFlag({ type: RESET_RELOGIN_FLAG2_FALSE, bool: false });
   }
@@ -56,7 +58,7 @@ class Login extends Component {
       alert('用户名或密码不能为空');
       return;
     }
-    setTimeout(() => this.setState({ access: true }), 2000);
+    setTimeout(() => this.setState({ access: true }), 1000);
 
     /* submit({ userName, password })
       .then(result => {

@@ -2,7 +2,7 @@
  * @Author: Chosen
  * @Date: 2019-06-15 13:33:01
  * @Last Modified by: Chosen
- * @Last Modified time: 2019-06-15 17:43:04
+ * @Last Modified time: 2019-06-16 13:08:37
  * @Description: production configuration
  */
 
@@ -15,13 +15,14 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
-module.exports = () =>
-  merge.smart(base, {
-    mode: 'production',
+module.exports = env => {
+  const mode = env.NODE_ENV === 'dev' ? 'development' : 'production';
+  return merge.smart(base, {
+    mode,
     output: {
       publicPath: './',
-      filename: 'bundle/[name].[hash:4].js',
-      chunkFilename: 'bundle/[name].[chunkhash:6].js'
+      filename: 'bundle/[id].[hash:4].js',
+      chunkFilename: 'bundle/[id].[chunkhash:6].js'
     },
 
     optimization: {
@@ -52,7 +53,7 @@ module.exports = () =>
     },
 
     plugins: [
-    new CleanWebpackPlugin(["dist", ".analysis"]),
+      new CleanWebpackPlugin(["dist", ".analysis"]),
 
       new HtmlWebpackPlugin({
         inject: 'body',
@@ -61,7 +62,7 @@ module.exports = () =>
         filename: 'index.html',
         template: 'tmpl/index.pro.html'
       }),
-    
+
       new CopyWebpackPlugin([
         // dll
         {
@@ -93,3 +94,4 @@ module.exports = () =>
       ])
     ]
   });
+}

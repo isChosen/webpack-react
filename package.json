@@ -102,8 +102,9 @@
     "start:dev": "webpack-dev-server --progress --config webpack.config.main.dev.js",
     "start:pre": "webpack-dev-server --progress --config webpack.config.main.dev.js --env.NODE_ENV=pre",
     "start:pro": "webpack-dev-server --progress --config webpack.config.main.dev.js --env.NODE_ENV=pro",
-    "start": "npm run dll:dev && npm run start:self",
-    "build:self": "webpack --progress --config webpack.config.main.build.js",
-    "build": "npm run dll:pro && npm run build:self"
+    "start": "npm run dll:dev && npm run start:dev",
+    "build:dev": "webpack --progress --config webpack.config.main.build.js --env.NODE_ENV=dev",
+    "build:pro": "webpack --progress --config webpack.config.main.build.js --env.NODE_ENV=pro",
+    "build": "npm run dll:pro && npm run build:pro"
   }
 }
