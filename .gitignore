@@ -47,6 +47,5 @@ debug.log
 /dist
 .cache
 .analysis
-package-lock.json
 
 
